@@ -1,0 +1,58 @@
+#headerContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5vw;
+    max-height: 100px;
+    min-height: 80px;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s;
+
+    #logo {
+        width: 10%;
+        min-width: 150px;
+        height: 100%;
+        font-family: "NotoSansKR B";
+        color: white;
+        transition: all 0.5s;
+    }
+    
+    #menuBox {
+        width: 40%;
+        min-width: 600px;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 22%;
+        max-width: 200px;
+        height: 100%;
+        font-size: 1.6rem;
+        font-family: "NotoSansKR B";
+        letter-spacing: 1px;
+        color: white;
+        transition: all 0.5s;
+    }
+}
+
+
+#headerContainer:hover {
+    background-color: white;
+}
+
+
+#headerContainer:hover #logo,
+#headerContainer:hover .menu {
+    color: black;
+}
+
