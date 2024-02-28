@@ -4,6 +4,22 @@
 @tailwind variants;
 
 
+@font-face {
+    font-family: 'NotoSansKR R';
+    src: url("$lib/assets/fonts/NotoSansKR-Regular.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: 'NotoSansKR EB';
+    src: url("$lib/assets/fonts/NotoSansKR-ExtraBold.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: 'NotoSansKR L';
+    src: url("$lib/assets/fonts/NotoSansKR-Light.ttf") format("ttf");
+}
+
+
 .font-cache {
     width: 0;
     height: 0;
@@ -17,6 +33,13 @@
 
 :root [data-theme="skeleton"] {
     --theme-font-family-base: "Noto Sans KR Regular", sans-serif;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
