@@ -1,9 +1,7 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
 	import '../app.postcss';
-    import Header from './Header.svelte';
+	import Header from "../components/header/Header.svelte";
 	import { initializeStores } from "@skeletonlabs/skeleton";
-
 	
 	initializeStores();
 </script>

@@ -1,0 +1,141 @@
+#head-container {
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
+}
+
+/* *************** in header *************** */
+#limit-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+/* ----- logo-box ----- */
+#logo-box {
+    order: 1;
+    height: 100%;
+}
+
+#logo-box > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 28px;
+}
+
+/* ----- menu-box ----- */
+#menu-box {
+    order: 0;
+}
+
+.light-mode-menu {
+    width: 50px;
+    height: 50px;
+    background: url("$lib/assets/images/lightMode-menu.png") no-repeat center center/70%;
+}
+
+.dark-mode-menu {
+    width: 50px;
+    height: 50px;
+    background: url("$lib/assets/images/darkMode-menu.png") no-repeat center/70%;
+}
+
+/* ----- light-box ----- */
+#light-box {
+    order: 2;
+}
+
+/* ----- menu, light ----- */
+#menu-box,
+#light-box {
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* *************** in Drawer *************** */
+#drawer-limit-box {
+    display: flex;
+    flex-direction: column;
+    max-width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+/* ----- sub-header 부분 ----- */
+#sub-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.light-mode-line {
+    border-bottom: 1px solid rgba(73, 90, 143, 0.2);
+}
+
+.dark-mode-line {
+    border-bottom: 1px solid rgba(200, 200, 200, 0.2);
+}
+
+#drawer-close-box {
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.light-mode-close {
+    width: 50px;
+    height: 50px;
+    background: url("$lib/assets/images/lightMode-close.png") no-repeat center center/70%;
+}
+
+.dark-mode-close {
+    width: 50px;
+    height: 50px;
+    background: url("$lib/assets/images/darkMode-close.png") no-repeat center center/70%;
+}
+
+#category-box {
+    width: 700px;
+    height: 70px;
+}
+
+.category-btn {
+    width: 25%;
+    height: 100%;
+    border-radius: 0;
+}
+
+.category-btn:hover {
+    opacity: 0.5;
+}
+
+/* ----- sub-contents-box 부분 ----- */
+#contents-box {
+    width: 100%;
+    height: 100%;
+    padding: 50px 0;
+}
+
+#before-click-text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    font-size: 18px;
+    opacity: 0.5;
+}
