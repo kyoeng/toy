@@ -1,0 +1,104 @@
+#footer-container {
+    width: 100%;
+    height: 400px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.3);
+}
+
+
+#limit-container {
+    display: flex;
+    max-width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    justify-content: space-between;
+    padding: 50px 0 100px;
+    
+    
+    #left {
+        width: 60%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    
+        #source-info-title {
+            font-size: 14px;
+            opacity: 0.6;
+        }
+
+        #static-source-box {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            
+            a {
+                font-size: 12px;
+                opacity: 0.5;
+                text-decoration: underline;
+                margin-left: 20px;
+            }
+
+            a:hover {
+                opacity: 1;
+            }
+        }
+    }
+    
+    
+    #right {
+        width: 70px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    
+        #share-box {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+    
+            .temp {
+                width: 70px;
+                height: 70px;
+                border: 1px solid;
+                opacity: 0.5;
+            }
+        }
+    }
+
+
+    #git-address {
+        position: absolute;
+        bottom: 55px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        opacity: 0.4;
+    }
+
+    #git-address:hover {
+        opacity: 1;
+    }
+
+
+    #site-info-box {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-top: 1px solid;
+        opacity: 0.4;
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+}

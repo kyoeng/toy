@@ -1,20 +1,18 @@
-<!-- ########## script ########## -->
 <script lang="ts">
     import "./Header.scss";
     import { LightSwitch, getModeOsPrefers, setModeCurrent, getDrawerStore, Drawer, type DrawerSettings } from "@skeletonlabs/skeleton";
     import { onMount } from "svelte";
-    import { categoryData } from "$lib/data/data";
+    import { categoryData, contentsData, contentsIconData } from "$lib/data/commonData";
+    import { categoryStore } from "$stores/headerStore";
 
 
 
-    let menuImageMode: boolean;     // 화면 모드에 대한 변수
+    // 화면 모드에 대한 변수
+    let menuImageMode: boolean;     
 
     // 메뉴 클릭 시 나타낼 서랍장 옵션
     const drawerStore = getDrawerStore();
-    const drawerSetting: DrawerSettings = { position: "top" }
-
-    // 카테고리 컨텐츠들에 대한 참조 변수
-    const contentsArr: HTMLDivElement[] = [];
+    const drawerSetting: DrawerSettings = { position: "top", height: "h-[400px]", duration: 300 }
 
 
 
@@ -29,6 +27,7 @@
 
     // 메뉴버튼 클릭 이벤트
     function menuClickEvt(): void {
+        categoryStore.reset();
         drawerStore.open(drawerSetting);
     }
 
@@ -58,7 +57,8 @@
 
 
 
-<!-- ########## html ########## -->
+
+<!-- Header -->
 <header id="head-container" class="bg-surface-100-800-token">
     <div id="limit-box">
         <h1 id="logo-box">
@@ -75,6 +75,8 @@
     </div>
 </header>
 
+
+<!-- Drawer -->
 <Drawer>
     <div id="drawer-limit-box">
         <div id="sub-header" class={menuImageMode ? "light-mode-line" : "dark-mode-line"}>
@@ -83,21 +85,48 @@
             </div>
 
             <div id="category-box">
+                <!-- 각 언어 -->
                 {#each categoryData as data}
-                    <button type="button" class="btn category-btn">
+                    <button type="button" class="btn category-btn" on:click={() => categoryStore.change(data.idx)}>
                         {data.name}
                     </button>
                 {/each}
             </div>
         </div>
 
-        <div id="contents-box">
-            <div id="before-click-text">카테고리를 클릭해 보세요. | Click the categories at the top.</div>
 
-            <!-- todo : contentsArr로 중첩 돌리기 -->
+        <div id="contents-container">
+            <!-- 언어 이미지 -->
+            {#each contentsIconData as {idx, image, title}}
+                <div class="lang-box" style={$categoryStore === idx ? "opacity: 1; left: 15px; visibility: visible; z-index: 1;" : "opacity: 0; left: -5%; visibility: hidden;"}>
+                    <img src={image} alt="" class="lang-icon">
+                    <h3 class="lang-title">{title}</h3>
+                </div>
+            {/each}
+
+            <p id="info-text">
+                이 사이트는 공부의 목적으로 만들어진 사이트입니다
+            </p>
+
+            <div id="contents-box">
+                <div id="before-click-text" style={$categoryStore === -1 ? "" : "opacity: 0; left: 5%; visibility: hidden;"}>
+                    카테고리를 클릭하세요
+                </div>
+    
+                <!-- 각 언어별 컨텐츠 -->
+                {#each contentsData as {idx, data}}
+                    <div class="contents-flex-box" style={$categoryStore === idx ? "opacity: 1; left: 0; visibility: visible; z-index: 1;" : "opacity: 0; left: 5%; visibility: hidden;"}>
+                        {#each data as {subject, lightModeImage, darkModeImage, goto}}
+                            <div class="contents-view-box">
+                                <a href={goto} class="link">link</a>
+
+                                <img src={menuImageMode ? lightModeImage : darkModeImage} alt="" class="contents-img">
+                                <h2 class="contents-title">{subject}</h2>
+                            </div>
+                        {/each}
+                    </div>
+                {/each}
+            </div>
         </div>
     </div>
 </Drawer>
-
-<!-- <a href="https://www.flaticon.com/kr/free-icons/" title=" 아이콘"> 아이콘  제작자: kendis lasman - Flaticon</a> -->
-<!-- <a href="https://www.flaticon.com/kr/free-icons/-" title="닫기 버튼 아이콘">닫기 버튼 아이콘  제작자: inkubators - Flaticon</a> -->

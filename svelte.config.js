@@ -20,6 +20,9 @@ const config = {
 			precompress: false,
 			strict: true
 		}),
+		alias: {
+			"$stores": "./src/stores"
+		}
 	}
 };
 export default config;
