@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { staticSourceData } from "$lib/data/commonData";
+    import { headerSourceData, pageSourceData } from "./data";
 import "./Footer.scss";
 </script>
 
@@ -12,9 +12,18 @@ import "./Footer.scss";
             <div id="source-box">
                 <p id="source-info-title">이미지 출처</p>
 
-                <div id="static-source-box">
-                    {#each staticSourceData as link}
-                        {@html link}
+                <p id="header-source-title">메뉴바 부분</p>
+                <div class="source-box">
+                    {#each headerSourceData as source}
+                        {@html source}
+                    {/each}
+                </div>
+
+                <!-- todo flaticon에서 아이콘 찾아서 이미지 만들어 대체하기 -->
+                <p id="contents-page-source-title">카테고리별 페이지 부분</p>
+                <div class="source-box">
+                    {#each pageSourceData as source}
+                        {@html source}
                     {/each}
                 </div>
             </div>

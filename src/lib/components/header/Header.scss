@@ -6,6 +6,7 @@
     position: sticky;
     top: 0;
     left: 0;
+    z-index: 39;
 }
 
 /* *************** in header *************** */
@@ -67,6 +68,10 @@
 
 
 /* *************** in Drawer *************** */
+#test {
+    z-index: 20000;
+}
+
 #drawer-limit-box {
     display: flex;
     flex-direction: column;

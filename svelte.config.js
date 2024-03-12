@@ -21,7 +21,9 @@ const config = {
 			strict: true
 		}),
 		alias: {
-			"$stores": "./src/stores"
+			"$components": "./src/lib/components",
+			"$stores": "./src/lib/stores",
+			"$assets": "./src/lib/assets"
 		}
 	}
 };

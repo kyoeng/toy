@@ -1,0 +1,45 @@
+#home-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 180px);
+    grid-template-rows: repeat(6, 180px);
+    grid-gap: 40px;
+    grid-template-areas: 
+        "main main main main sub1 sub1"
+        "main main main main sub1 sub1"
+        "main main main main sub2 sub2"
+        "main main main main sub2 sub2"
+        "subM subM subM subM sub3 sub3"
+        "subM subM subM subM sub3 sub3";
+
+    
+    #main-banner {
+        grid-area: main;
+    }
+
+    
+    #sub-main-banner {
+        grid-area: subM;
+    }
+
+
+    #sub-banner1 {
+        grid-area: sub1;
+    }
+
+
+    #sub-banner2 {
+        grid-area: sub2;
+    }
+
+
+    #sub-banner3 {
+        grid-area: sub3;
+    }
+
+
+    div {
+        border: 1px solid;
+        opacity: 0.5;
+    }
+}
