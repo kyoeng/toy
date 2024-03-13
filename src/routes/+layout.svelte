@@ -13,7 +13,7 @@
 
 	// Modal 저장소 배열
 	const modalRegistry: Record<string, ModalComponent> = {
-        "automaticCar": {ref: AutomaticDriveCar, props: jsWebData[0]}
+        "automaticCar": {ref: AutomaticDriveCar, props: {title: jsWebData[0].title}}
     }
 </script>
 
